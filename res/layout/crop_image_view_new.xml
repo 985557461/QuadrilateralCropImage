@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+            android:id="@+id/ImageView_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"/>
+
+    <com.xy.QuadrilateralCrop.quadrilateral_crop.cropwindow.QuadrilateralCropOverlayView
+            android:id="@+id/CropOverlayView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+</merge>
