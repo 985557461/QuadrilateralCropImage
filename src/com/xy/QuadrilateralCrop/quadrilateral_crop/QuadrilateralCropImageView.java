@@ -241,11 +241,11 @@ public class QuadrilateralCropImageView extends FrameLayout {
         Bitmap resultBmp = Bitmap.createBitmap(imageViewWidth, imageViewHeight, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(resultBmp);
         Path path = new Path();
-        path.moveTo(EdgeNew.TOP_LEFT.getxCoordinate()-showRect.left, EdgeNew.TOP_LEFT.getyCoordinate()-showRect.top);
-        path.lineTo(EdgeNew.TOP_RIGHT.getxCoordinate()-showRect.left, EdgeNew.TOP_RIGHT.getyCoordinate()-showRect.top);
-        path.lineTo(EdgeNew.BOTTOM_RIGHT.getxCoordinate()-showRect.left, EdgeNew.BOTTOM_RIGHT.getyCoordinate()-showRect.top);
-        path.lineTo(EdgeNew.BOTTOM_LEFT.getxCoordinate()-showRect.left, EdgeNew.BOTTOM_LEFT.getyCoordinate()-showRect.top);
-        path.lineTo(EdgeNew.TOP_LEFT.getxCoordinate()-showRect.left, EdgeNew.TOP_LEFT.getyCoordinate()-showRect.top);
+        path.moveTo(EdgeNew.TOP_LEFT.getxCoordinate() - showRect.left, EdgeNew.TOP_LEFT.getyCoordinate() - showRect.top);
+        path.lineTo(EdgeNew.TOP_RIGHT.getxCoordinate() - showRect.left, EdgeNew.TOP_RIGHT.getyCoordinate() - showRect.top);
+        path.lineTo(EdgeNew.BOTTOM_RIGHT.getxCoordinate() - showRect.left, EdgeNew.BOTTOM_RIGHT.getyCoordinate() - showRect.top);
+        path.lineTo(EdgeNew.BOTTOM_LEFT.getxCoordinate() - showRect.left, EdgeNew.BOTTOM_LEFT.getyCoordinate() - showRect.top);
+        path.lineTo(EdgeNew.TOP_LEFT.getxCoordinate() - showRect.left, EdgeNew.TOP_LEFT.getyCoordinate() - showRect.top);
 
         canvas.clipPath(path);
         Matrix matrix = new Matrix();
@@ -255,7 +255,7 @@ public class QuadrilateralCropImageView extends FrameLayout {
         paint.setAntiAlias(true);
         canvas.drawBitmap(mBitmap, matrix, paint);
 
-        //图片剪裁出来后，要进行缩放处理，让剪裁的图片充满全屏
+        //得到变形的图片的大小
         int minLeft = (int) (EdgeNew.TOP_LEFT.getxCoordinate() > EdgeNew.BOTTOM_LEFT.getxCoordinate() ? EdgeNew.BOTTOM_LEFT.getxCoordinate() : EdgeNew.TOP_LEFT.getxCoordinate());
         int maxRight = (int) (EdgeNew.TOP_RIGHT.getxCoordinate() > EdgeNew.BOTTOM_RIGHT.getxCoordinate() ? EdgeNew.TOP_RIGHT.getxCoordinate() : EdgeNew.BOTTOM_RIGHT.getxCoordinate());
         int minTop = (int) (EdgeNew.TOP_LEFT.getyCoordinate() > EdgeNew.TOP_RIGHT.getyCoordinate() ? EdgeNew.TOP_RIGHT.getyCoordinate() : EdgeNew.TOP_LEFT.getyCoordinate());
@@ -277,37 +277,66 @@ public class QuadrilateralCropImageView extends FrameLayout {
             resultBmp.recycle();
             resultBmp = null;
         }
-
-//        List<Integer> piexs = new ArrayList<Integer>();
-//        int bmpWidth = scaledBmp.getWidth();
-//        int bmpHeight = scaledBmp.getHeight();
-//        for (int x = 0; x < bmpWidth; x++) {
-//            for (int y = 0; y < bmpHeight; y++) {
-//                int pixel = scaledBmp.getPixel(x, y);
-//                if (pixel != Color.TRANSPARENT) {
-//                    piexs.add(pixel);
-//                }
-//            }
-//        }
-//        int pixelCount = piexs.size();
-//        int finalWidth = width;
-//        int partOne = pixelCount / finalWidth;
-//        int partTwo = pixelCount % finalWidth == 0 ? 0 : 1;
-//        int finalHeight = partOne + partTwo;
-//        Bitmap finalBmp = Bitmap.createBitmap(finalWidth, finalHeight, Bitmap.Config.ARGB_8888);
-//        if (finalBmp != null) {
-//            for (int x = 0; x < finalWidth; x++) {
-//                for (int y = 0; y < finalHeight; y++) {
-//                    int index = x * finalWidth + y;
-//                    if (index < pixelCount) {
-//                        finalBmp.setPixel(x, y, piexs.get(index));
-//                    } else {
-//                        finalBmp.setPixel(x, y, piexs.get(pixelCount - 1));
-//                    }
-//                }
-//            }
-//        }
         return scaledBmp;
+    }
+
+    public Bitmap getCroppedImageTwo() {
+        //原始的纹理图片
+        Bitmap texsBitmap = Bitmap.createBitmap(imageViewWidth, imageViewHeight, Bitmap.Config.ARGB_8888);
+        Matrix matrix = new Matrix();
+        matrix.postScale(scaleRadio, scaleRadio);
+
+        Paint paint = new Paint();
+        paint.setAntiAlias(true);
+        Canvas texSCanvas = new Canvas(texsBitmap);
+        texSCanvas.drawBitmap(mBitmap, matrix, paint);
+
+        //得到最后结果图片的大小
+        int minLeft = (int) (EdgeNew.TOP_LEFT.getxCoordinate() > EdgeNew.BOTTOM_LEFT.getxCoordinate() ? EdgeNew.BOTTOM_LEFT.getxCoordinate() : EdgeNew.TOP_LEFT.getxCoordinate());
+        int maxRight = (int) (EdgeNew.TOP_RIGHT.getxCoordinate() > EdgeNew.BOTTOM_RIGHT.getxCoordinate() ? EdgeNew.TOP_RIGHT.getxCoordinate() : EdgeNew.BOTTOM_RIGHT.getxCoordinate());
+        int minTop = (int) (EdgeNew.TOP_LEFT.getyCoordinate() > EdgeNew.TOP_RIGHT.getyCoordinate() ? EdgeNew.TOP_RIGHT.getyCoordinate() : EdgeNew.TOP_LEFT.getyCoordinate());
+        int maxBottom = (int) (EdgeNew.BOTTOM_LEFT.getyCoordinate() > EdgeNew.BOTTOM_RIGHT.getyCoordinate() ? EdgeNew.BOTTOM_LEFT.getyCoordinate() : EdgeNew.BOTTOM_RIGHT.getyCoordinate());
+        int width = Math.abs(maxRight - minLeft);
+        int height = Math.abs(maxBottom - minTop);
+
+        Bitmap resultBmp = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+
+        //初始化纹理坐标
+        float[] mTexs = new float[12];
+        //纹理三角形1
+        setXY(mTexs, 0, EdgeNew.TOP_LEFT.getxCoordinate() - showRect.left, EdgeNew.TOP_LEFT.getyCoordinate() - showRect.top);
+        setXY(mTexs, 1, EdgeNew.TOP_RIGHT.getxCoordinate() - showRect.left, EdgeNew.TOP_RIGHT.getyCoordinate() - showRect.top);
+        setXY(mTexs, 2, EdgeNew.BOTTOM_LEFT.getxCoordinate() - showRect.left, EdgeNew.BOTTOM_LEFT.getyCoordinate() - showRect.top);
+        //纹理三角形2
+        setXY(mTexs, 3, EdgeNew.TOP_RIGHT.getxCoordinate() - showRect.left, EdgeNew.TOP_RIGHT.getyCoordinate() - showRect.top);
+        setXY(mTexs, 4, EdgeNew.BOTTOM_RIGHT.getxCoordinate() - showRect.left, EdgeNew.BOTTOM_RIGHT.getyCoordinate() - showRect.top);
+        setXY(mTexs, 5, EdgeNew.BOTTOM_LEFT.getxCoordinate() - showRect.left, EdgeNew.BOTTOM_LEFT.getyCoordinate() - showRect.top);
+
+        //初始化顶点坐标
+        float[] mVerts = new float[12];
+        setXY(mVerts,0,0,0);
+        setXY(mVerts,1,width,0);
+        setXY(mVerts,2,0,height);
+        setXY(mVerts,3,width,0);
+        setXY(mVerts,4,width,height);
+        setXY(mVerts,5,0,height);
+
+        //初始化纹理画笔
+        Paint paintTexs = new Paint();
+        Shader shader = new BitmapShader(texsBitmap, Shader.TileMode.CLAMP,Shader.TileMode.CLAMP);
+        paintTexs.setShader(shader);
+        paintTexs.setAntiAlias(true);
+
+        //绘制
+        Canvas finalCanvas = new Canvas(resultBmp);
+        finalCanvas.drawVertices(Canvas.VertexMode.TRIANGLES, mVerts.length, mVerts, 0,mTexs, 0, null, 0, null, 0, 0, paintTexs);
+
+        return resultBmp;
+    }
+
+    private static void setXY(float[] array, int index, float x, float y) {
+        array[index * 2 + 0] = x;
+        array[index * 2 + 1] = y;
     }
 
     public void rotateImage(int degrees) {

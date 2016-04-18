@@ -53,7 +53,7 @@ public class QuadrilateralActivity extends Activity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.titleTV:
-                resultBmp = cropImageView.getCroppedImage();
+                resultBmp = cropImageView.getCroppedImageTwo();
                 cropImageView.setVisibility(View.GONE);
                 showContainer.setVisibility(View.VISIBLE);
                 showImageView.setImageBitmap(resultBmp);
