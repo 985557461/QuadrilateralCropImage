@@ -113,7 +113,8 @@
                         android:thumb="@drawable/thumb"
                         android:thumbOffset="0dip"
                         android:minHeight="5dp"
-                        android:maxHeight="5dp"/>
+                        android:maxHeight="5dp"
+                        android:max="200"/>
             </FrameLayout>
             <HorizontalScrollView
                     android:id="@+id/horScrollView"
