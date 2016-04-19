@@ -101,8 +101,8 @@ public class QuadrilateralCropImageView extends FrameLayout {
         mCropOverlayView = (QuadrilateralCropOverlayView) v.findViewById(R.id.CropOverlayView);
 
         float scale = context.getResources().getDisplayMetrics().density;
-        leftRightMargin = (int) (30.0f / scale + 0.5f);
-        topBottomMargin = (int) (30.0f / scale + 0.5f);
+        leftRightMargin = (int) (15 * scale + 0.5f);;
+        topBottomMargin = (int) (15 * scale + 0.5f);
     }
 
     @Override
@@ -238,49 +238,6 @@ public class QuadrilateralCropImageView extends FrameLayout {
     }
 
     public Bitmap getCroppedImage() {
-        Bitmap resultBmp = Bitmap.createBitmap(imageViewWidth, imageViewHeight, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(resultBmp);
-        Path path = new Path();
-        path.moveTo(EdgeNew.TOP_LEFT.getxCoordinate() - showRect.left, EdgeNew.TOP_LEFT.getyCoordinate() - showRect.top);
-        path.lineTo(EdgeNew.TOP_RIGHT.getxCoordinate() - showRect.left, EdgeNew.TOP_RIGHT.getyCoordinate() - showRect.top);
-        path.lineTo(EdgeNew.BOTTOM_RIGHT.getxCoordinate() - showRect.left, EdgeNew.BOTTOM_RIGHT.getyCoordinate() - showRect.top);
-        path.lineTo(EdgeNew.BOTTOM_LEFT.getxCoordinate() - showRect.left, EdgeNew.BOTTOM_LEFT.getyCoordinate() - showRect.top);
-        path.lineTo(EdgeNew.TOP_LEFT.getxCoordinate() - showRect.left, EdgeNew.TOP_LEFT.getyCoordinate() - showRect.top);
-
-        canvas.clipPath(path);
-        Matrix matrix = new Matrix();
-        matrix.postScale(scaleRadio, scaleRadio);
-
-        Paint paint = new Paint();
-        paint.setAntiAlias(true);
-        canvas.drawBitmap(mBitmap, matrix, paint);
-
-        //得到变形的图片的大小
-        int minLeft = (int) (EdgeNew.TOP_LEFT.getxCoordinate() > EdgeNew.BOTTOM_LEFT.getxCoordinate() ? EdgeNew.BOTTOM_LEFT.getxCoordinate() : EdgeNew.TOP_LEFT.getxCoordinate());
-        int maxRight = (int) (EdgeNew.TOP_RIGHT.getxCoordinate() > EdgeNew.BOTTOM_RIGHT.getxCoordinate() ? EdgeNew.TOP_RIGHT.getxCoordinate() : EdgeNew.BOTTOM_RIGHT.getxCoordinate());
-        int minTop = (int) (EdgeNew.TOP_LEFT.getyCoordinate() > EdgeNew.TOP_RIGHT.getyCoordinate() ? EdgeNew.TOP_RIGHT.getyCoordinate() : EdgeNew.TOP_LEFT.getyCoordinate());
-        int maxBottom = (int) (EdgeNew.BOTTOM_LEFT.getyCoordinate() > EdgeNew.BOTTOM_RIGHT.getyCoordinate() ? EdgeNew.BOTTOM_LEFT.getyCoordinate() : EdgeNew.BOTTOM_RIGHT.getyCoordinate());
-        int width = Math.abs(maxRight - minLeft);
-        int height = Math.abs(maxBottom - minTop);
-
-        int tempx = minLeft - showRect.left;
-        if (tempx <= 0) {
-            tempx = 0;
-        }
-        int tempy = minTop - showRect.top;
-        if (tempy <= 0) {
-            tempy = 0;
-        }
-
-        Bitmap scaledBmp = Bitmap.createBitmap(resultBmp, tempx, tempy, width, height);
-        if (scaledBmp != resultBmp && !resultBmp.isRecycled()) {
-            resultBmp.recycle();
-            resultBmp = null;
-        }
-        return scaledBmp;
-    }
-
-    public Bitmap getCroppedImageTwo() {
         //原始的纹理图片
         Bitmap texsBitmap = Bitmap.createBitmap(imageViewWidth, imageViewHeight, Bitmap.Config.ARGB_8888);
         Matrix matrix = new Matrix();

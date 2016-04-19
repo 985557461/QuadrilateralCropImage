@@ -23,7 +23,7 @@ import android.widget.ToggleButton;
 import com.xy.QuadrilateralCrop.quadrilateral_crop.CropImageView;
 
 
-public class MainActivity extends Activity {
+public class ActivityNormalTest extends Activity {
 
     // Static final constants
     private static final int DEFAULT_ASPECT_RATIO_VALUES = 10;
