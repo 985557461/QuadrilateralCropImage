@@ -4,24 +4,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1afc3f8-54f8-466a-b0fa-dfe8b7969bd9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/QuadrilateralCrop.apk" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/QuadrilateralCrop.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/QuadrilateralCrop.unaligned.apk" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/QuadrilateralCrop.unaligned.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop$1.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$id.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$layout.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$menu.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$menu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$string.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$string.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$style.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$style.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$styleable.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$styleable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/CropImageView.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/CropImageView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/QuadrilateralCropImageView.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/QuadrilateralCropImageView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_quadrilateral_crop.xml" afterPath="$PROJECT_DIR$/res/layout/activity_quadrilateral_crop.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.java" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.java" />
-    </list>
+    <list default="true" id="a1afc3f8-54f8-466a-b0fa-dfe8b7969bd9" name="Default" comment="" />
     <ignored path="QuadrilateralCrop.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
