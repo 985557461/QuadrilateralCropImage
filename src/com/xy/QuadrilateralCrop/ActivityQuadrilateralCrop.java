@@ -41,6 +41,7 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
     private View liangDuTV;
     private View duiBiDuTV;
     private View baoHeDuTV;
+    private View ruiHuaTV;
     private View showContainer;
     private QuadrilateralCropImageView cropImageView;
 
@@ -102,6 +103,7 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         liangDuTV = findViewById(R.id.liangDuTV);
         duiBiDuTV = findViewById(R.id.duiBiDuTV);
         baoHeDuTV = findViewById(R.id.baoHeDuTV);
+        ruiHuaTV = findViewById(R.id.ruiHuaTV);
         showContainer = findViewById(R.id.showContainer);
         cropImageView = (QuadrilateralCropImageView) findViewById(R.id.cropImageView);
         seekBarContainer = findViewById(R.id.seekBarContainer);
@@ -121,6 +123,7 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         liangDuTV.setOnClickListener(this);
         duiBiDuTV.setOnClickListener(this);
         baoHeDuTV.setOnClickListener(this);
+        ruiHuaTV.setOnClickListener(this);
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -154,6 +157,7 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
                 changeBmpBaoHeDu(progress);
                 break;
             case RUIHUA:
+                changeBmpRuiHua(progress);
                 break;
         }
     }
@@ -168,6 +172,7 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
                 0, 0, brightness,// 改变亮度
                 0, 0, 1, 0, brightness, 0, 0, 0, 1, 0});
         Paint paint = new Paint();
+        paint.setAntiAlias(true);
         paint.setColorFilter(new ColorMatrixColorFilter(cMatrix));
 
         Canvas canvas = new Canvas(copyBmp);
@@ -187,6 +192,7 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         ColorMatrix cMatrix = new ColorMatrix();
         cMatrix.setSaturation((float) ((progress - CENTER_VALUE) / 100.0));
         Paint paint = new Paint();
+        paint.setAntiAlias(true);
         paint.setColorFilter(new ColorMatrixColorFilter(cMatrix));
 
         Canvas canvas = new Canvas(copyBmp);
@@ -209,6 +215,7 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
                 contrast, 0, 0, 0,// 改变对比度
                 0, 0, contrast, 0, 0, 0, 0, 0, 1, 0});
         Paint paint = new Paint();
+        paint.setAntiAlias(true);
         paint.setColorFilter(new ColorMatrixColorFilter(cMatrix));
 
         Canvas canvas = new Canvas(copyBmp);
@@ -216,6 +223,77 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         matrix.postScale(scaleRatio, scaleRatio);
         canvas.drawBitmap(currentBmp, matrix, paint);
         showImageView.setImageBitmap(copyBmp);
+        if (lastBmp != null && lastBmp != copyBmp && !lastBmp.isRecycled()) {
+            lastBmp.recycle();
+        }
+    }
+
+    private void changeBmpRuiHua(int progress) {
+        ruiHuaInt = progress;
+        Bitmap lastBmp = copyBmp;
+        // 拉普拉斯矩阵
+        int[] laplacian = new int[]{-1, -1, -1, -1, 9, -1, -1, -1, -1};
+
+        int width = currentBmp.getWidth();
+        int height = currentBmp.getHeight();
+        Bitmap ruiHuaBmp = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+
+        int pixR = 0;
+        int pixG = 0;
+        int pixB = 0;
+
+        int pixColor = 0;
+
+        int newR = 0;
+        int newG = 0;
+        int newB = 0;
+
+        int idx = 0;
+        float alpha = progress * 1.0f / 200.0f;
+        int[] pixels = new int[width * height];
+        currentBmp.getPixels(pixels, 0, width, 0, 0, width, height);
+        for (int i = 1, length = height - 1; i < length; i++) {
+            for (int k = 1, len = width - 1; k < len; k++) {
+                idx = 0;
+                for (int m = -1; m <= 1; m++) {
+                    for (int n = -1; n <= 1; n++) {
+                        pixColor = pixels[(i + n) * width + k + m];
+                        pixR = Color.red(pixColor);
+                        pixG = Color.green(pixColor);
+                        pixB = Color.blue(pixColor);
+
+                        newR = newR + (int) (pixR * laplacian[idx] * alpha);
+                        newG = newG + (int) (pixG * laplacian[idx] * alpha);
+                        newB = newB + (int) (pixB * laplacian[idx] * alpha);
+                        idx++;
+                    }
+                }
+
+                newR = Math.min(255, Math.max(0, newR));
+                newG = Math.min(255, Math.max(0, newG));
+                newB = Math.min(255, Math.max(0, newB));
+
+                pixels[i * width + k] = Color.argb(255, newR, newG, newB);
+                newR = 0;
+                newG = 0;
+                newB = 0;
+            }
+        }
+
+        ruiHuaBmp.setPixels(pixels, 0, width, 0, 0, width, height);
+
+        //得到锐化的bitmap,然后缩放到showimageView大小,展示锐化效果
+        copyBmp = Bitmap.createBitmap(imageViewWidth, imageViewHeight, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(copyBmp);
+        Matrix matrix = new Matrix();
+        matrix.postScale(scaleRatio, scaleRatio);
+        Paint paint = new Paint();
+        paint.setAntiAlias(true);
+        canvas.drawBitmap(ruiHuaBmp, matrix, paint);
+        showImageView.setImageBitmap(copyBmp);
+        if (ruiHuaBmp != null && ruiHuaBmp != copyBmp && !ruiHuaBmp.isRecycled()) {
+            ruiHuaBmp.recycle();
+        }
         if (lastBmp != null && lastBmp != copyBmp && !lastBmp.isRecycled()) {
             lastBmp.recycle();
         }
@@ -248,6 +326,9 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
                 break;
             case R.id.duiBiDuTV:
                 toChangeDuiBiDu();
+                break;
+            case R.id.ruiHuaTV:
+                toChangeRuiDu();
                 break;
         }
     }
@@ -299,6 +380,15 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
                 }
                 break;
             case RUIHUA:
+                changeTitleBarState(true, "");
+                changeBottomBarState(true);
+                ruiHuaInt = CENTER_VALUE;
+                //显示原图像，并且释放产生的临时的bitmap
+                showImageView.setImageBitmap(currentBmp);
+                if (copyBmp != null && !copyBmp.isRecycled()) {
+                    copyBmp.recycle();
+                    copyBmp = null;
+                }
                 break;
         }
         currentOperation = NOTHING;
@@ -396,8 +486,72 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
                 }
             }
             break;
-            case RUIHUA:
-                break;
+            case RUIHUA: {
+                changeTitleBarState(true, "");
+                changeBottomBarState(true);
+                Bitmap lastBmp = currentBmp;
+                // 拉普拉斯矩阵
+                int[] laplacian = new int[]{-1, -1, -1, -1, 9, -1, -1, -1, -1};
+
+                int width = currentBmp.getWidth();
+                int height = currentBmp.getHeight();
+                Bitmap ruiHuaBmp = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+
+                int pixR = 0;
+                int pixG = 0;
+                int pixB = 0;
+
+                int pixColor = 0;
+
+                int newR = 0;
+                int newG = 0;
+                int newB = 0;
+
+                int idx = 0;
+                float alpha = ruiHuaInt * 1.0f / 200.0f;
+                int[] pixels = new int[width * height];
+                currentBmp.getPixels(pixels, 0, width, 0, 0, width, height);
+                for (int i = 1, length = height - 1; i < length; i++) {
+                    for (int k = 1, len = width - 1; k < len; k++) {
+                        idx = 0;
+                        for (int m = -1; m <= 1; m++) {
+                            for (int n = -1; n <= 1; n++) {
+                                pixColor = pixels[(i + n) * width + k + m];
+                                pixR = Color.red(pixColor);
+                                pixG = Color.green(pixColor);
+                                pixB = Color.blue(pixColor);
+
+                                newR = newR + (int) (pixR * laplacian[idx] * alpha);
+                                newG = newG + (int) (pixG * laplacian[idx] * alpha);
+                                newB = newB + (int) (pixB * laplacian[idx] * alpha);
+                                idx++;
+                            }
+                        }
+
+                        newR = Math.min(255, Math.max(0, newR));
+                        newG = Math.min(255, Math.max(0, newG));
+                        newB = Math.min(255, Math.max(0, newB));
+
+                        pixels[i * width + k] = Color.argb(255, newR, newG, newB);
+                        newR = 0;
+                        newG = 0;
+                        newB = 0;
+                    }
+                }
+
+                ruiHuaBmp.setPixels(pixels, 0, width, 0, 0, width, height);
+
+                currentBmp = ruiHuaBmp;
+                showBitmap();
+                if (lastBmp != null && lastBmp != copyBmp && !lastBmp.isRecycled()) {
+                    lastBmp.recycle();
+                }
+                if (copyBmp != null && !copyBmp.isRecycled()) {
+                    copyBmp.recycle();
+                    copyBmp = null;
+                }
+            }
+            break;
         }
         currentOperation = NOTHING;
     }
@@ -462,6 +616,14 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         changeTitleBarState(false, "对比度");
         changeBottomBarState(false);
         seekBar.setProgress(duiBiDuInt);
+    }
+
+    //改变图片锐化
+    private void toChangeRuiDu() {
+        currentOperation = RUIHUA;
+        changeTitleBarState(false, "锐化");
+        changeBottomBarState(false);
+        seekBar.setProgress(ruiHuaInt);
     }
 
     @Override
