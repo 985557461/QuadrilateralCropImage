@@ -14,12 +14,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.xy.QuadrilateralCrop.R;
 import com.xy.QuadrilateralCrop.quadrilateral_crop.cropwindow.QuadrilateralCropOverlayView;
-import com.xy.QuadrilateralCrop.quadrilateral_crop.cropwindow.edge.Edge;
 import com.xy.QuadrilateralCrop.quadrilateral_crop.cropwindow.edgenew.EdgeNew;
 import com.xy.QuadrilateralCrop.quadrilateral_crop.util.ImageViewUtil;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by fc on 15-3-11.

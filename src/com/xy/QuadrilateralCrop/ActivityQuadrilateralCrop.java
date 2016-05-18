@@ -3,15 +3,17 @@ package com.xy.QuadrilateralCrop;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.*;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.SeekBar;
-import android.widget.TextView;
+import android.widget.*;
+import com.xy.QuadrilateralCrop.gpuimage.GPUImageFilter;
+import com.xy.QuadrilateralCrop.gpuimage.GPUImageView;
+import com.xy.QuadrilateralCrop.gpuimage.util.GPUImageFilterTools;
 import com.xy.QuadrilateralCrop.quadrilateral_crop.QuadrilateralCropImageView;
 
 /**
@@ -27,7 +29,9 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
     private View nextStepView;
     private View okView;
 
-    //用来展示剪裁，变换结果的ImageView
+    /**
+     * 用来展示剪裁，变换结果的ImageView*
+     */
     private ImageView showImageView;
     private int imageViewWidth = 0;
     private int imageViewHeight = 0;
@@ -73,14 +77,30 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
     private int currentOperation = NOTHING;//没有操作
 
     /**
+     * gpu filter*
+     */
+    private GPUImageView gpuImageView;
+    private GPUImageFilter mFilter;
+    private GPUImageFilterTools.FilterAdjuster mFilterAdjuster;
+
+    /**
      * 当前的操作的各种数值*
      */
-    private static final int CENTER_VALUE = 100;
+    private static final int CENTER_VALUE = 50;
     private int lingDuInt = CENTER_VALUE;
     private int duiBiDuInt = CENTER_VALUE;
     private int lengNuanInt = CENTER_VALUE;
     private int baoHeDuInt = CENTER_VALUE;
     private int ruiHuaInt = CENTER_VALUE;
+
+    /**
+     * 上次的进度数值*
+     */
+    private int lastlingDuInt = lingDuInt;
+    private int lastduiBiDuInt = duiBiDuInt;
+    private int lastlengNuanInt = lengNuanInt;
+    private int lastbaoHeDuInt = baoHeDuInt;
+    private int lastruiHuaInt = ruiHuaInt;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,6 +118,7 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         nextStepView = findViewById(R.id.nextStepView);
         okView = findViewById(R.id.okView);
         showImageView = (ImageView) findViewById(R.id.showImageView);
+        gpuImageView = (GPUImageView) findViewById(R.id.gpuImageView);
         horScrollView = findViewById(R.id.horScrollView);
         cropTV = findViewById(R.id.cropTV);
         liangDuTV = findViewById(R.id.liangDuTV);
@@ -163,140 +184,31 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
     }
 
     private void changeBmpLiangDu(int progress) {
-        lingDuInt = progress;
-        Bitmap lastBmp = copyBmp;
-        copyBmp = Bitmap.createBitmap(imageViewWidth, imageViewHeight, Bitmap.Config.ARGB_8888);
-        int brightness = progress - CENTER_VALUE;
-        ColorMatrix cMatrix = new ColorMatrix();
-        cMatrix.set(new float[]{1, 0, 0, 0, brightness, 0, 1,
-                0, 0, brightness,// 改变亮度
-                0, 0, 1, 0, brightness, 0, 0, 0, 1, 0});
-        Paint paint = new Paint();
-        paint.setAntiAlias(true);
-        paint.setColorFilter(new ColorMatrixColorFilter(cMatrix));
 
-        Canvas canvas = new Canvas(copyBmp);
-        Matrix matrix = new Matrix();
-        matrix.postScale(scaleRatio, scaleRatio);
-        canvas.drawBitmap(currentBmp, matrix, paint);
-        showImageView.setImageBitmap(copyBmp);
-        if (lastBmp != null && lastBmp != copyBmp && !lastBmp.isRecycled()) {
-            lastBmp.recycle();
-        }
     }
 
     private void changeBmpBaoHeDu(int progress) {
-        baoHeDuInt = progress;
-        Bitmap lastBmp = copyBmp;
-        copyBmp = Bitmap.createBitmap(imageViewWidth, imageViewHeight, Bitmap.Config.ARGB_8888);
-        ColorMatrix cMatrix = new ColorMatrix();
-        cMatrix.setSaturation((float) ((progress - CENTER_VALUE) / 100.0));
-        Paint paint = new Paint();
-        paint.setAntiAlias(true);
-        paint.setColorFilter(new ColorMatrixColorFilter(cMatrix));
 
-        Canvas canvas = new Canvas(copyBmp);
-        Matrix matrix = new Matrix();
-        matrix.postScale(scaleRatio, scaleRatio);
-        canvas.drawBitmap(currentBmp, matrix, paint);
-        showImageView.setImageBitmap(copyBmp);
-        if (lastBmp != null && lastBmp != copyBmp && !lastBmp.isRecycled()) {
-            lastBmp.recycle();
-        }
     }
 
     private void changeBmpDuiBiDu(int progress) {
         duiBiDuInt = progress;
-        Bitmap lastBmp = copyBmp;
-        copyBmp = Bitmap.createBitmap(imageViewWidth, imageViewHeight, Bitmap.Config.ARGB_8888);
-        float contrast = (float) ((progress - CENTER_VALUE) / 100.0);
-        ColorMatrix cMatrix = new ColorMatrix();
-        cMatrix.set(new float[]{contrast, 0, 0, 0, 0, 0,
-                contrast, 0, 0, 0,// 改变对比度
-                0, 0, contrast, 0, 0, 0, 0, 0, 1, 0});
-        Paint paint = new Paint();
-        paint.setAntiAlias(true);
-        paint.setColorFilter(new ColorMatrixColorFilter(cMatrix));
-
-        Canvas canvas = new Canvas(copyBmp);
-        Matrix matrix = new Matrix();
-        matrix.postScale(scaleRatio, scaleRatio);
-        canvas.drawBitmap(currentBmp, matrix, paint);
-        showImageView.setImageBitmap(copyBmp);
-        if (lastBmp != null && lastBmp != copyBmp && !lastBmp.isRecycled()) {
-            lastBmp.recycle();
+        //渲染
+        if (mFilterAdjuster != null) {
+            mFilterAdjuster.adjust(duiBiDuInt);
         }
+        gpuImageView.requestRender();
     }
 
     private void changeBmpRuiHua(int progress) {
-        ruiHuaInt = progress;
-        Bitmap lastBmp = copyBmp;
-        // 拉普拉斯矩阵
-        int[] laplacian = new int[]{-1, -1, -1, -1, 9, -1, -1, -1, -1};
+    }
 
-        int width = currentBmp.getWidth();
-        int height = currentBmp.getHeight();
-        Bitmap ruiHuaBmp = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+    private void switchFilterTo(final GPUImageFilter filter) {
+        mFilter = filter;
+        gpuImageView.setFilter(mFilter);
+        mFilterAdjuster = new GPUImageFilterTools.FilterAdjuster(mFilter);
 
-        int pixR = 0;
-        int pixG = 0;
-        int pixB = 0;
-
-        int pixColor = 0;
-
-        int newR = 0;
-        int newG = 0;
-        int newB = 0;
-
-        int idx = 0;
-        float alpha = progress * 1.0f / 200.0f;
-        int[] pixels = new int[width * height];
-        currentBmp.getPixels(pixels, 0, width, 0, 0, width, height);
-        for (int i = 1, length = height - 1; i < length; i++) {
-            for (int k = 1, len = width - 1; k < len; k++) {
-                idx = 0;
-                for (int m = -1; m <= 1; m++) {
-                    for (int n = -1; n <= 1; n++) {
-                        pixColor = pixels[(i + n) * width + k + m];
-                        pixR = Color.red(pixColor);
-                        pixG = Color.green(pixColor);
-                        pixB = Color.blue(pixColor);
-
-                        newR = newR + (int) (pixR * laplacian[idx] * alpha);
-                        newG = newG + (int) (pixG * laplacian[idx] * alpha);
-                        newB = newB + (int) (pixB * laplacian[idx] * alpha);
-                        idx++;
-                    }
-                }
-
-                newR = Math.min(255, Math.max(0, newR));
-                newG = Math.min(255, Math.max(0, newG));
-                newB = Math.min(255, Math.max(0, newB));
-
-                pixels[i * width + k] = Color.argb(255, newR, newG, newB);
-                newR = 0;
-                newG = 0;
-                newB = 0;
-            }
-        }
-
-        ruiHuaBmp.setPixels(pixels, 0, width, 0, 0, width, height);
-
-        //得到锐化的bitmap,然后缩放到showimageView大小,展示锐化效果
-        copyBmp = Bitmap.createBitmap(imageViewWidth, imageViewHeight, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(copyBmp);
-        Matrix matrix = new Matrix();
-        matrix.postScale(scaleRatio, scaleRatio);
-        Paint paint = new Paint();
-        paint.setAntiAlias(true);
-        canvas.drawBitmap(ruiHuaBmp, matrix, paint);
-        showImageView.setImageBitmap(copyBmp);
-        if (ruiHuaBmp != null && ruiHuaBmp != copyBmp && !ruiHuaBmp.isRecycled()) {
-            ruiHuaBmp.recycle();
-        }
-        if (lastBmp != null && lastBmp != copyBmp && !lastBmp.isRecycled()) {
-            lastBmp.recycle();
-        }
+        findViewById(R.id.seekBar).setVisibility(mFilterAdjuster.canAdjust() ? View.VISIBLE : View.GONE);
     }
 
 
@@ -347,48 +259,27 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
             case LIANGDU:
                 changeTitleBarState(true, "");
                 changeBottomBarState(true);
-                lingDuInt = CENTER_VALUE;
-                //显示原图像，并且释放产生的临时的bitmap
-                showImageView.setImageBitmap(currentBmp);
-                if (copyBmp != null && !copyBmp.isRecycled()) {
-                    copyBmp.recycle();
-                    copyBmp = null;
-                }
                 break;
             case DUIBIDU:
                 changeTitleBarState(true, "");
                 changeBottomBarState(true);
-                duiBiDuInt = CENTER_VALUE;
+                duiBiDuInt = lastduiBiDuInt;
                 //显示原图像，并且释放产生的临时的bitmap
-                showImageView.setImageBitmap(currentBmp);
                 if (copyBmp != null && !copyBmp.isRecycled()) {
                     copyBmp.recycle();
                     copyBmp = null;
                 }
+                showBitmap();
                 break;
             case LENGNUAN:
                 break;
             case BAOHEDU:
                 changeTitleBarState(true, "");
                 changeBottomBarState(true);
-                baoHeDuInt = CENTER_VALUE;
-                //显示原图像，并且释放产生的临时的bitmap
-                showImageView.setImageBitmap(currentBmp);
-                if (copyBmp != null && !copyBmp.isRecycled()) {
-                    copyBmp.recycle();
-                    copyBmp = null;
-                }
                 break;
             case RUIHUA:
                 changeTitleBarState(true, "");
                 changeBottomBarState(true);
-                ruiHuaInt = CENTER_VALUE;
-                //显示原图像，并且释放产生的临时的bitmap
-                showImageView.setImageBitmap(currentBmp);
-                if (copyBmp != null && !copyBmp.isRecycled()) {
-                    copyBmp.recycle();
-                    copyBmp = null;
-                }
                 break;
         }
         currentOperation = NOTHING;
@@ -406,54 +297,32 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
             case LIANGDU: {
                 changeTitleBarState(true, "");
                 changeBottomBarState(true);
-                //根据亮度，计算当前的currentBmp的亮度
-                Bitmap lastBmp = currentBmp;
-                Bitmap temp = Bitmap.createBitmap(bmpWidth, bmpHeight, Bitmap.Config.ARGB_8888);
-                int brightness = lingDuInt - CENTER_VALUE;
-                ColorMatrix cMatrix = new ColorMatrix();
-                cMatrix.set(new float[]{1, 0, 0, 0, brightness, 0, 1,
-                        0, 0, brightness,// 改变亮度
-                        0, 0, 1, 0, brightness, 0, 0, 0, 1, 0});
-                Paint paint = new Paint();
-                paint.setColorFilter(new ColorMatrixColorFilter(cMatrix));
-
-                Canvas canvas = new Canvas(temp);
-                canvas.drawBitmap(currentBmp, 0, 0, paint);
-                currentBmp = temp;
-                showBitmap();
-                //释放产生的临时的bitmap
-                if (lastBmp != null && !lastBmp.isRecycled()) {
-                    lastBmp.recycle();
-                }
-                if (copyBmp != null && !copyBmp.isRecycled()) {
-                    copyBmp.recycle();
-                    copyBmp = null;
-                }
             }
             break;
             case DUIBIDU: {
                 changeTitleBarState(true, "");
                 changeBottomBarState(true);
-                //根据对比度，计算当前的currentBmp的对比度
+                //得到gpu绘制的bitmap
                 Bitmap lastBmp = currentBmp;
-                Bitmap temp = Bitmap.createBitmap(bmpWidth, bmpHeight, Bitmap.Config.ARGB_8888);
-                float contrast = (float) ((duiBiDuInt - CENTER_VALUE) / 100.0);
-                ColorMatrix cMatrix = new ColorMatrix();
-                cMatrix.set(new float[]{contrast, 0, 0, 0, 0, 0,
-                        contrast, 0, 0, 0,// 改变对比度
-                        0, 0, contrast, 0, 0, 0, 0, 0, 1, 0});
-                Paint paint = new Paint();
-                paint.setColorFilter(new ColorMatrixColorFilter(cMatrix));
-
-                Canvas canvas = new Canvas(temp);
-                canvas.drawBitmap(currentBmp, 0, 0, paint);
-                currentBmp = temp;
+                try {
+//                    String fileName = System.currentTimeMillis() + ".jpg";
+//                    gpuImageView.saveToPictures("GPUImage2", fileName, new GPUImageView.OnPictureSavedListener() {
+//                        @Override
+//                        public void onPictureSaved(Uri uri) {
+//                            Toast.makeText(ActivityQuadrilateralCrop.this, uri.toString(), Toast.LENGTH_LONG).show();
+//                            Log.d("xiaoyu", uri.toString());
+//                        }
+//                    });
+                    currentBmp = gpuImageView.capture();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 showBitmap();
                 //释放产生的临时的bitmap
-                if (lastBmp != null && !lastBmp.isRecycled()) {
+                if (lastBmp != null && lastBmp != currentBmp && !lastBmp.isRecycled()) {
                     lastBmp.recycle();
                 }
-                if (copyBmp != null && !copyBmp.isRecycled()) {
+                if (copyBmp != null && copyBmp != currentBmp && !copyBmp.isRecycled()) {
                     copyBmp.recycle();
                     copyBmp = null;
                 }
@@ -464,92 +333,11 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
             case BAOHEDU: {
                 changeTitleBarState(true, "");
                 changeBottomBarState(true);
-                //根据饱和度，计算当前的currentBmp的饱和度
-                Bitmap lastBmp = currentBmp;
-                Bitmap temp = Bitmap.createBitmap(bmpWidth, bmpHeight, Bitmap.Config.ARGB_8888);
-                ColorMatrix cMatrix = new ColorMatrix();
-                cMatrix.setSaturation((float) ((baoHeDuInt - CENTER_VALUE) / 100.0));
-                Paint paint = new Paint();
-                paint.setColorFilter(new ColorMatrixColorFilter(cMatrix));
-
-                Canvas canvas = new Canvas(temp);
-                canvas.drawBitmap(currentBmp, 0, 0, paint);
-                currentBmp = temp;
-                showBitmap();
-                //释放产生的临时的bitmap
-                if (lastBmp != null && !lastBmp.isRecycled()) {
-                    lastBmp.recycle();
-                }
-                if (copyBmp != null && !copyBmp.isRecycled()) {
-                    copyBmp.recycle();
-                    copyBmp = null;
-                }
             }
             break;
             case RUIHUA: {
                 changeTitleBarState(true, "");
                 changeBottomBarState(true);
-                Bitmap lastBmp = currentBmp;
-                // 拉普拉斯矩阵
-                int[] laplacian = new int[]{-1, -1, -1, -1, 9, -1, -1, -1, -1};
-
-                int width = currentBmp.getWidth();
-                int height = currentBmp.getHeight();
-                Bitmap ruiHuaBmp = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-
-                int pixR = 0;
-                int pixG = 0;
-                int pixB = 0;
-
-                int pixColor = 0;
-
-                int newR = 0;
-                int newG = 0;
-                int newB = 0;
-
-                int idx = 0;
-                float alpha = ruiHuaInt * 1.0f / 200.0f;
-                int[] pixels = new int[width * height];
-                currentBmp.getPixels(pixels, 0, width, 0, 0, width, height);
-                for (int i = 1, length = height - 1; i < length; i++) {
-                    for (int k = 1, len = width - 1; k < len; k++) {
-                        idx = 0;
-                        for (int m = -1; m <= 1; m++) {
-                            for (int n = -1; n <= 1; n++) {
-                                pixColor = pixels[(i + n) * width + k + m];
-                                pixR = Color.red(pixColor);
-                                pixG = Color.green(pixColor);
-                                pixB = Color.blue(pixColor);
-
-                                newR = newR + (int) (pixR * laplacian[idx] * alpha);
-                                newG = newG + (int) (pixG * laplacian[idx] * alpha);
-                                newB = newB + (int) (pixB * laplacian[idx] * alpha);
-                                idx++;
-                            }
-                        }
-
-                        newR = Math.min(255, Math.max(0, newR));
-                        newG = Math.min(255, Math.max(0, newG));
-                        newB = Math.min(255, Math.max(0, newB));
-
-                        pixels[i * width + k] = Color.argb(255, newR, newG, newB);
-                        newR = 0;
-                        newG = 0;
-                        newB = 0;
-                    }
-                }
-
-                ruiHuaBmp.setPixels(pixels, 0, width, 0, 0, width, height);
-
-                currentBmp = ruiHuaBmp;
-                showBitmap();
-                if (lastBmp != null && lastBmp != copyBmp && !lastBmp.isRecycled()) {
-                    lastBmp.recycle();
-                }
-                if (copyBmp != null && !copyBmp.isRecycled()) {
-                    copyBmp.recycle();
-                    copyBmp = null;
-                }
             }
             break;
         }
@@ -599,6 +387,9 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         currentOperation = LIANGDU;
         changeTitleBarState(false, "亮度");
         changeBottomBarState(false);
+
+        showImageView.setVisibility(View.INVISIBLE);
+
         seekBar.setProgress(lingDuInt);
     }
 
@@ -607,6 +398,9 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         currentOperation = BAOHEDU;
         changeTitleBarState(false, "饱和度");
         changeBottomBarState(false);
+
+        showImageView.setVisibility(View.INVISIBLE);
+
         seekBar.setProgress(baoHeDuInt);
     }
 
@@ -615,6 +409,16 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         currentOperation = DUIBIDU;
         changeTitleBarState(false, "对比度");
         changeBottomBarState(false);
+
+        showImageView.setVisibility(View.INVISIBLE);
+
+        //对图像的副本进行操作
+        genCopyBmpAndSetGpuBmp();
+        GPUImageFilter filter = GPUImageFilterTools.createFilterForType(this, GPUImageFilterTools.FilterType.CONTRAST);
+        switchFilterTo(filter);
+        gpuImageView.requestRender();
+
+        lastduiBiDuInt = duiBiDuInt;
         seekBar.setProgress(duiBiDuInt);
     }
 
@@ -623,7 +427,27 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         currentOperation = RUIHUA;
         changeTitleBarState(false, "锐化");
         changeBottomBarState(false);
+
+        showImageView.setVisibility(View.INVISIBLE);
+
         seekBar.setProgress(ruiHuaInt);
+    }
+
+    private void genCopyBmpAndSetGpuBmp(){
+        //对图像的副本进行操作
+        Bitmap lastBmp = copyBmp;
+        copyBmp = Bitmap.createBitmap(imageViewWidth, imageViewHeight, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(copyBmp);
+        Matrix matrix = new Matrix();
+        Paint paint = new Paint();
+        paint.setAntiAlias(true);
+        matrix.postScale(scaleRatio, scaleRatio);
+        canvas.drawBitmap(currentBmp, matrix, paint);
+        gpuImageView.getGPUImage().deleteImage();
+        gpuImageView.setImage(copyBmp);
+        if (lastBmp != null && lastBmp != copyBmp && !lastBmp.isRecycled()) {
+            lastBmp.recycle();
+        }
     }
 
     @Override
@@ -667,7 +491,7 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
             scaleRatio = verScaleRadio;
         }
 
-        FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) showImageView.getLayoutParams();
+        FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) gpuImageView.getLayoutParams();
         if (params != null) {
             params.width = imageViewWidth;
             params.height = imageViewHeight;
@@ -675,7 +499,11 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
             params = new FrameLayout.LayoutParams(imageViewWidth, imageViewHeight);
             params.gravity = Gravity.CENTER;
         }
+
         showImageView.setLayoutParams(params);
+        gpuImageView.setLayoutParams(params);
+
+        showImageView.setVisibility(View.VISIBLE);
         showImageView.setImageBitmap(currentBmp);
     }
 
