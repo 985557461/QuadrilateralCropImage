@@ -31,62 +31,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1afc3f8-54f8-466a-b0fa-dfe8b7969bd9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/nineoldandroids-2.4.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/AVLoadingIndicatorView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/BallBeatIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/BallClipRotateIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/BallClipRotateMultipleIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/BallClipRotatePulseIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/BallGridBeatIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/BallGridPulseIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/BallPulseIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/BallPulseRiseIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/BallPulseSyncIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/BallRotateIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/BallScaleIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/BallScaleMultipleIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/BallScaleRippleIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/BallScaleRippleMultipleIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/BallSpinFadeLoaderIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/BallTrianglePathIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/BallZigZagDeflectIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/BallZigZagIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/BaseIndicatorController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/CubeTransitionIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/DialogUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/LineScaleIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/LineScalePartyIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/LineScalePulseOutIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/LineScalePulseOutRapidIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/LineSpinFadeLoaderIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/PacmanIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/SemiCircleSpinIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/SquareSpinIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/TriangleSkewSpinIndicator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/loading_view.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/nineoldandroids_2_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest$6.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop$1.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/CropImageView.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/CropImageView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/QuadrilateralCrop.apk" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/QuadrilateralCrop.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/QuadrilateralCrop.unaligned.apk" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/QuadrilateralCrop.unaligned.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/QuadrilateralCropImageView.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/QuadrilateralCropImageView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$attr.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$attr.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$drawable.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$drawable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$id.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$layout.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$menu.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$menu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$raw.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$raw.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$string.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$string.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$style.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$style.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$styleable.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$styleable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.java" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QuadrilateralCrop.iml" afterPath="$PROJECT_DIR$/QuadrilateralCrop.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/styles.xml" afterPath="$PROJECT_DIR$/res/values/styles.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="QuadrilateralCrop.iws" />
@@ -116,11 +61,21 @@
       <file leaf-file-name="ActivityQuadrilateralCrop.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.787037" vertical-offset="12577" max-vertical-offset="13442">
-              <caret line="597" column="13" selection-start-line="597" selection-start-column="13" selection-end-line="597" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.61093247" vertical-offset="13282" max-vertical-offset="13904">
+              <caret line="627" column="25" selection-start-line="627" selection-start-column="25" selection-end-line="627" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QuadrilateralCropImageView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/quadrilateral_crop/QuadrilateralCropImageView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="5535" max-vertical-offset="6996">
+              <caret line="235" column="37" selection-start-line="235" selection-start-column="37" selection-end-line="235" selection-end-column="37" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -706,7 +661,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31060606" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3517316" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26298702" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22761194" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -862,6 +817,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -869,6 +825,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -890,6 +847,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="208" column="59" selection-start-line="208" selection-start-column="59" selection-end-line="208" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1021,14 +981,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3452211" vertical-offset="1078" max-vertical-offset="2508">
           <caret line="96" column="16" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/quadrilateral_crop/QuadrilateralCropImageView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6996">
-          <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1333,10 +1285,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/quadrilateral_crop/QuadrilateralCropImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5535" max-vertical-offset="6996">
+          <caret line="235" column="37" selection-start-line="235" selection-start-column="37" selection-end-line="235" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.787037" vertical-offset="12577" max-vertical-offset="13442">
-          <caret line="597" column="13" selection-start-line="597" selection-start-column="13" selection-end-line="597" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.61093247" vertical-offset="13282" max-vertical-offset="13904">
+          <caret line="627" column="25" selection-start-line="627" selection-start-column="25" selection-end-line="627" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

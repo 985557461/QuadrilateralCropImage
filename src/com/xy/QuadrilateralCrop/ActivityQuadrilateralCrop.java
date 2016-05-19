@@ -323,7 +323,7 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
             case NOTHING:
                 break;
             case CROP:
-                getCropImageAndShow();
+                new GenCropBmpTask().execute();
                 break;
             case ROTATE:
                 break;
@@ -536,20 +536,6 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         showImageView.setImageBitmap(currentBmp);
     }
 
-    private void getCropImageAndShow() {
-        changeTitleBarState(true, "");
-        Bitmap resultBmp = cropImageView.getCroppedImage();
-        cropImageView.setVisibility(View.GONE);
-        showContainer.setVisibility(View.VISIBLE);
-        Bitmap lastBmp = currentBmp;
-        currentBmp = resultBmp;
-        showBitmap();
-        //释放上一个bitmap
-        if (lastBmp != null && lastBmp != currentBmp && !lastBmp.isRecycled()) {
-            lastBmp.recycle();
-        }
-    }
-
     /**
      * 获得状态栏的高度
      */
@@ -569,7 +555,7 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
     }
 
     /**
-     * 生成图片的线程*
+     * 生成滤镜图片的线程*
      */
     private class GenFilterBmpTask extends AsyncTask<Void, Void, Bitmap> {
 
@@ -604,6 +590,41 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
             super.onPostExecute(bitmap);
             changeTitleBarState(true, "");
             changeBottomBarState(true);
+            showBitmap();
+            DialogUtil.getInstance().dismissLoading(ActivityQuadrilateralCrop.this);
+        }
+    }
+
+    /**
+     * 生成变形剪裁图片的线程*
+     */
+    private class GenCropBmpTask extends AsyncTask<Void, Void, Bitmap> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            DialogUtil.getInstance().showLoading(ActivityQuadrilateralCrop.this);
+        }
+
+        @Override
+        protected Bitmap doInBackground(Void... voids) {
+            //得到剪裁的bitmap
+            Bitmap resultBmp = cropImageView.getCroppedImage();
+            Bitmap lastBmp = currentBmp;
+            currentBmp = resultBmp;
+            //释放上一个bitmap
+            if (lastBmp != null && lastBmp != currentBmp && !lastBmp.isRecycled()) {
+                lastBmp.recycle();
+            }
+            return currentBmp;
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+            super.onPostExecute(bitmap);
+            changeTitleBarState(true, "");
+            cropImageView.setVisibility(View.GONE);
+            showContainer.setVisibility(View.VISIBLE);
             showBitmap();
             DialogUtil.getInstance().dismissLoading(ActivityQuadrilateralCrop.this);
         }
