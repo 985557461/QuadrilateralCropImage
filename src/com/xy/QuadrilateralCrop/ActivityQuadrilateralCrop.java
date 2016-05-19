@@ -3,6 +3,7 @@ package com.xy.QuadrilateralCrop;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.*;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Gravity;
@@ -12,6 +13,7 @@ import android.widget.*;
 import com.xy.QuadrilateralCrop.gpuimage.GPUImageFilter;
 import com.xy.QuadrilateralCrop.gpuimage.GPUImageView;
 import com.xy.QuadrilateralCrop.gpuimage.util.GPUImageFilterTools;
+import com.xy.QuadrilateralCrop.loading_view.DialogUtil;
 import com.xy.QuadrilateralCrop.quadrilateral_crop.QuadrilateralCropImageView;
 
 /**
@@ -330,24 +332,7 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
             case WHITEBALANCE:
             case BAOHEDU:
             case RUIHUA: {
-                changeTitleBarState(true, "");
-                changeBottomBarState(true);
-                //得到gpu绘制的bitmap
-                Bitmap lastBmp = currentBmp;
-                try {
-                    currentBmp = gpuImageView.capture();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                showBitmap();
-                //释放产生的临时的bitmap
-                if (lastBmp != null && lastBmp != currentBmp && !lastBmp.isRecycled()) {
-                    lastBmp.recycle();
-                }
-                if (copyBmp != null && copyBmp != currentBmp && !copyBmp.isRecycled()) {
-                    copyBmp.recycle();
-                    copyBmp = null;
-                }
+                new GenFilterBmpTask().execute();
             }
             break;
         }
@@ -572,5 +557,55 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         Rect frame = new Rect();
         getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
         return frame.top;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (DialogUtil.getInstance().isShowing(this)) {
+            //保存图片的过程中不允许退出
+            return;
+        }
+        super.onBackPressed();
+    }
+
+    /**
+     * 生成图片的线程*
+     */
+    private class GenFilterBmpTask extends AsyncTask<Void, Void, Bitmap> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            DialogUtil.getInstance().showLoading(ActivityQuadrilateralCrop.this);
+        }
+
+        @Override
+        protected Bitmap doInBackground(Void... voids) {
+            //得到gpu绘制的bitmap
+            Bitmap lastBmp = currentBmp;
+            try {
+                currentBmp = gpuImageView.capture();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            //释放产生的临时的bitmap
+            if (lastBmp != null && lastBmp != currentBmp && !lastBmp.isRecycled()) {
+                lastBmp.recycle();
+            }
+            if (copyBmp != null && copyBmp != currentBmp && !copyBmp.isRecycled()) {
+                copyBmp.recycle();
+                copyBmp = null;
+            }
+            return currentBmp;
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+            super.onPostExecute(bitmap);
+            changeTitleBarState(true, "");
+            changeBottomBarState(true);
+            showBitmap();
+            DialogUtil.getInstance().dismissLoading(ActivityQuadrilateralCrop.this);
+        }
     }
 }
