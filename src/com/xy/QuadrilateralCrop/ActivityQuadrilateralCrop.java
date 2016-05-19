@@ -582,6 +582,7 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
                 copyBmp.recycle();
                 copyBmp = null;
             }
+            System.gc();
             return currentBmp;
         }
 
@@ -610,12 +611,8 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         protected Bitmap doInBackground(Void... voids) {
             //得到剪裁的bitmap
             Bitmap resultBmp = cropImageView.getCroppedImage();
-            Bitmap lastBmp = currentBmp;
             currentBmp = resultBmp;
-            //释放上一个bitmap
-            if (lastBmp != null && lastBmp != currentBmp && !lastBmp.isRecycled()) {
-                lastBmp.recycle();
-            }
+            System.gc();
             return currentBmp;
         }
 
