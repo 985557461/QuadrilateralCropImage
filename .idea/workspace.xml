@@ -30,8 +30,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1afc3f8-54f8-466a-b0fa-dfe8b7969bd9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.java" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_quadrilateral_crop.xml" afterPath="$PROJECT_DIR$/res/layout/activity_quadrilateral_crop.xml" />
     </list>
     <ignored path="QuadrilateralCrop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,8 +59,8 @@
       <file leaf-file-name="ActivityQuadrilateralCrop.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4340836" vertical-offset="12116" max-vertical-offset="13530">
-              <caret line="583" column="13" selection-start-line="583" selection-start-column="13" selection-end-line="583" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.49517685" vertical-offset="0" max-vertical-offset="13838">
+              <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -272,8 +271,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.6785715" vertical-offset="3864" max-vertical-offset="5214">
-              <caret line="185" column="59" selection-start-line="185" selection-start-column="45" selection-end-line="185" selection-end-column="59" />
+            <state vertical-scroll-proportion="-5.107143" vertical-offset="3014" max-vertical-offset="5236">
+              <caret line="150" column="59" selection-start-line="150" selection-start-column="59" selection-end-line="150" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -296,13 +295,13 @@
         <option value="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageContrastFilter.java" />
         <option value="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/util/GPUImageFilterTools.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/res/layout/activity_quadrilateral_crop.xml" />
         <option value="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/PacmanIndicator.java" />
         <option value="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/AVLoadingIndicatorView.java" />
         <option value="$PROJECT_DIR$/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/DialogUtil.java" />
         <option value="$PROJECT_DIR$/res/layout/loading_view.xml" />
         <option value="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.java" />
+        <option value="$PROJECT_DIR$/res/layout/activity_quadrilateral_crop.xml" />
       </list>
     </option>
   </component>
@@ -642,7 +641,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -658,7 +657,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31060606" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26298702" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26298702" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22761194" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1191,17 +1190,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_quadrilateral_crop.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6785715" vertical-offset="3864" max-vertical-offset="5214">
-          <caret line="185" column="59" selection-start-line="185" selection-start-column="45" selection-end-line="185" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/loading_view/indicator/PacmanIndicator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2574">
@@ -1290,10 +1278,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_quadrilateral_crop.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.107143" vertical-offset="3014" max-vertical-offset="5236">
+          <caret line="150" column="59" selection-start-line="150" selection-start-column="59" selection-end-line="150" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4340836" vertical-offset="12116" max-vertical-offset="13530">
-          <caret line="583" column="13" selection-start-line="583" selection-start-column="13" selection-end-line="583" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.49517685" vertical-offset="0" max-vertical-offset="13838">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
           <folding />
         </state>
       </provider>

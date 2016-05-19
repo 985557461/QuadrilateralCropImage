@@ -145,6 +145,7 @@
                           android:layout_height="115dp"
                           android:background="#141414"/>
                     <TextView
+                            android:visibility="gone"
                             android:layout_width="115dp"
                             android:layout_height="115dp"
                             android:layout_gravity="center"
