@@ -31,157 +31,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1afc3f8-54f8-466a-b0fa-dfe8b7969bd9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-nodpi/lookup_amatorka.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImage3x3ConvolutionFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImage3x3TextureSamplingFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageAddBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageAlphaBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageBilateralFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageBoxBlurFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageBrightnessFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageBulgeDistortionFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageCGAColorspaceFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageChromaKeyBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageColorBalanceFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageColorBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageColorBurnBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageColorDodgeBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageColorInvertFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageColorMatrixFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageContrastFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageCrosshatchFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageDarkenBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageDifferenceBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageDilationFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageDirectionalSobelEdgeDetectionFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageDissolveBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageDivideBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageEmbossFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageExclusionBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageExposureFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageFalseColorFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageFilterGroup.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/util/GPUImageFilterTools.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageGammaFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageGaussianBlurFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageGlassSphereFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageGrayscaleFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageHalftoneFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageHardLightBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageHazeFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageHighlightShadowFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageHueBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageHueFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageKuwaharaFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageLaplacianFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageLevelsFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageLightenBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageLinearBurnBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageLookupFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageLuminosityBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageMixBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageMonochromeFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageMultiplyBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageNativeLibrary.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageNonMaximumSuppressionFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageNormalBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageOpacityFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageOverlayBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImagePixelationFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImagePosterizeFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageRGBDilationFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageRGBFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageRenderer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageSaturationBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageSaturationFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageScreenBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageSepiaFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageSharpenFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageSketchFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageSmoothToonFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageSobelEdgeDetection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageSobelThresholdFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageSoftLightBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageSourceOverBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageSphereRefractionFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageSubtractBlendFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageSwirlFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageThresholdEdgeDetection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageToneCurveFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageToonFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageTransformFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageTwoInputFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageTwoPassFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageTwoPassTextureSamplingFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageVignetteFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageWeakPixelInclusionFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageWhiteBalanceFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/OpenGlUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/PixelBuffer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/Rotation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/util/TextureRotationUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/raw/tone_cuver_sample.acv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest$1.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest$2.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest$3.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest$4.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest$5.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest$6.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest$7.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityNormalTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop$1.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/util/AspectRatioUtil.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/util/AspectRatioUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/BuildConfig.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/BuildConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handle/CenterHandleHelper.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handle/CenterHandleHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handle/CornerHandleHelper.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handle/CornerHandleHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handlenew/CornerHandleHelperNew.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handlenew/CornerHandleHelperNew.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/CropImageView.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/CropImageView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/CropOverlayView.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/CropOverlayView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/drawer/Drawer.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/drawer/Drawer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/edge/Edge$1.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/edge/Edge$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/edge/Edge.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/edge/Edge.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/edgenew/EdgeNew.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/edgenew/EdgeNew.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/edge/EdgePair.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/edge/EdgePair.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handle/Handle.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handle/Handle.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handle/HandleHelper.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handle/HandleHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handlenew/HandleHelperNew.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handlenew/HandleHelperNew.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handlenew/HandleNew$1.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handlenew/HandleNew$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handlenew/HandleNew.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handlenew/HandleNew.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/util/HandleUtil$1.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/util/HandleUtil$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/util/HandleUtil.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/util/HandleUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handlenew/HandleUtilNew$1.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handlenew/HandleUtilNew$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handlenew/HandleUtilNew.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handlenew/HandleUtilNew.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handle/HorizontalHandleHelper.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handle/HorizontalHandleHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/util/ImageViewUtil.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/util/ImageViewUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/drawer/NewDrawer.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/drawer/NewDrawer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/drawer/OriginalDrawer.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/drawer/OriginalDrawer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/util/PaintUtil.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/util/PaintUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/QuadrilateralCrop.apk" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/QuadrilateralCrop.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/QuadrilateralCrop.unaligned.apk" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/QuadrilateralCrop.unaligned.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/QuadrilateralCropImageView$1.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/QuadrilateralCropImageView$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/QuadrilateralCropImageView.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/QuadrilateralCropImageView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/QuadrilateralCropOverlayView.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/QuadrilateralCropOverlayView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$array.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$array.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$attr.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$attr.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$drawable.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$drawable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$id.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$layout.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$menu.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$menu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$string.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$string.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$style.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$style.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$styleable.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R$styleable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/R.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handle/VerticalHandleHelper.class" afterPath="$PROJECT_DIR$/out/production/QuadrilateralCrop/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/handle/VerticalHandleHelper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.java" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/xy/QuadrilateralCrop/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/xy/QuadrilateralCrop/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/quadrilateral_crop/QuadrilateralCropImageView.java" afterPath="$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/quadrilateral_crop/QuadrilateralCropImageView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_quadrilateral_crop.xml" afterPath="$PROJECT_DIR$/res/layout/activity_quadrilateral_crop.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="QuadrilateralCrop.iws" />
@@ -211,17 +62,21 @@
       <file leaf-file-name="ActivityQuadrilateralCrop.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.453211" vertical-offset="9389" max-vertical-offset="11836">
-              <caret line="438" column="44" selection-start-line="438" selection-start-column="44" selection-end-line="438" selection-end-column="44" />
+            <state vertical-scroll-proportion="1.0341085" vertical-offset="11807" max-vertical-offset="12672">
+              <caret line="573" column="22" selection-start-line="573" selection-start-column="22" selection-end-line="573" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4079#4080#0" expanded="true" />
-                <element signature="e#4107#4108#0" expanded="true" />
-                <element signature="e#4719#4720#0" expanded="true" />
-                <element signature="e#4770#4771#0" expanded="true" />
-                <element signature="e#14133#14134#0" expanded="true" />
-                <element signature="e#14224#14225#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GPUImageFilterTools.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/util/GPUImageFilterTools.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="5962" max-vertical-offset="13662">
+              <caret line="332" column="81" selection-start-line="332" selection-start-column="81" selection-end-line="332" selection-end-column="81" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -263,14 +118,14 @@
       </file>
       <file leaf-file-name="activity_quadrilateral_crop.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/activity_quadrilateral_crop.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.910714" vertical-offset="1747" max-vertical-offset="5192">
-              <caret line="97" column="51" selection-start-line="97" selection-start-column="51" selection-end-line="97" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
           <provider editor-type-id="android-designer">
             <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.6785715" vertical-offset="3864" max-vertical-offset="5214">
+              <caret line="185" column="59" selection-start-line="185" selection-start-column="45" selection-end-line="185" selection-end-column="59" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -377,28 +232,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="QuadrilateralCrop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="QuadrilateralCropImage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -622,7 +459,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -638,11 +475,10 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31060606" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33225107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23809524" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22761194" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18614718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24946696" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -656,6 +492,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18614718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -710,7 +547,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="16" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -742,14 +579,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/crop_image_view.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26221693" vertical-offset="0" max-vertical-offset="0">
           <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/quadrilateral_crop/util/HandleUtil.java">
@@ -839,14 +676,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/crop_image_view_new.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24303797" vertical-offset="0" max-vertical-offset="0">
           <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/quadrilateral_crop/cropwindow/drawer/Drawer.java">
@@ -860,7 +697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -868,7 +704,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -890,9 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="208" column="59" selection-start-line="208" selection-start-column="59" selection-end-line="208" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -914,14 +746,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22912206" vertical-offset="0" max-vertical-offset="0">
           <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/drawable/seekbar_style.xml">
@@ -935,7 +767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.735459" vertical-offset="0" max-vertical-offset="0">
           <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -951,7 +782,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13685848" vertical-offset="0" max-vertical-offset="643">
           <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -969,7 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.06019152" vertical-offset="0" max-vertical-offset="1958">
           <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -985,7 +814,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="643">
           <caret line="0" column="47" selection-start-line="0" selection-start-column="47" selection-end-line="0" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1006,10 +834,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7119741" vertical-offset="528" max-vertical-offset="2442">
           <caret line="75" column="29" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
-          <folding>
-            <element signature="e#2164#2165#0" expanded="true" />
-            <element signature="e#2215#2216#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1021,22 +845,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/util/GPUImageFilterTools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13662">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/sdk/platforms/android-19/android.jar!/android/view/ViewGroup.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34447673" vertical-offset="4295" max-vertical-offset="11572">
           <caret line="348" column="16" selection-start-line="348" selection-start-column="16" selection-end-line="348" selection-end-column="16" />
-          <folding>
-            <element signature="e#10721#10722#0" expanded="true" />
-            <element signature="e#10772#10773#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1044,10 +856,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3452211" vertical-offset="1078" max-vertical-offset="2508">
           <caret line="96" column="16" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="16" />
-          <folding>
-            <element signature="e#3030#3031#0" expanded="true" />
-            <element signature="e#3081#3082#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1063,7 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30029586" vertical-offset="39" max-vertical-offset="1188">
           <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1090,19 +897,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="468" max-vertical-offset="2728">
           <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_quadrilateral_crop.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.910714" vertical-offset="1747" max-vertical-offset="5192">
-          <caret line="97" column="51" selection-start-line="97" selection-start-column="51" selection-end-line="97" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/GPUImageView.java">
@@ -1134,18 +929,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/gpuimage/util/GPUImageFilterTools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5962" max-vertical-offset="13662">
+          <caret line="332" column="81" selection-start-line="332" selection-start-column="81" selection-end-line="332" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_quadrilateral_crop.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.6785715" vertical-offset="3864" max-vertical-offset="5214">
+          <caret line="185" column="59" selection-start-line="185" selection-start-column="45" selection-end-line="185" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/xy/QuadrilateralCrop/ActivityQuadrilateralCrop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.453211" vertical-offset="9389" max-vertical-offset="11836">
-          <caret line="438" column="44" selection-start-line="438" selection-start-column="44" selection-end-line="438" selection-end-column="44" />
+        <state vertical-scroll-proportion="1.0341085" vertical-offset="11807" max-vertical-offset="12672">
+          <caret line="573" column="22" selection-start-line="573" selection-start-column="22" selection-end-line="573" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4079#4080#0" expanded="true" />
-            <element signature="e#4107#4108#0" expanded="true" />
-            <element signature="e#4719#4720#0" expanded="true" />
-            <element signature="e#4770#4771#0" expanded="true" />
-            <element signature="e#14133#14134#0" expanded="true" />
-            <element signature="e#14224#14225#0" expanded="true" />
           </folding>
         </state>
       </provider>

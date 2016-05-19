@@ -183,10 +183,11 @@
                           android:layout_height="115dp"
                           android:background="#141414"/>
                     <TextView
+                            android:id="@+id/whiteBalanceTV"
                             android:layout_width="115dp"
                             android:layout_height="115dp"
                             android:layout_gravity="center"
-                            android:text="冷暖"
+                            android:text="白平衡"
                             android:textColor="#ffffff"
                             android:textSize="16sp"
                             android:gravity="center"

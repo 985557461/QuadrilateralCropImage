@@ -3,10 +3,8 @@ package com.xy.QuadrilateralCrop;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.*;
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
@@ -45,6 +43,7 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
     private View liangDuTV;
     private View duiBiDuTV;
     private View baoHeDuTV;
+    private View whiteBalanceTV;
     private View ruiHuaTV;
     private View showContainer;
     private QuadrilateralCropImageView cropImageView;
@@ -70,7 +69,7 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
     private static final int ROTATE = 2;
     private static final int LIANGDU = 3;
     private static final int DUIBIDU = 4;
-    private static final int LENGNUAN = 5;
+    private static final int WHITEBALANCE = 5;
     private static final int BAOHEDU = 6;
     private static final int RUIHUA = 7;
 
@@ -89,7 +88,7 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
     private static final int CENTER_VALUE = 50;
     private int lingDuInt = CENTER_VALUE;
     private int duiBiDuInt = CENTER_VALUE;
-    private int lengNuanInt = CENTER_VALUE;
+    private int whiteBalanceInt = CENTER_VALUE;
     private int baoHeDuInt = CENTER_VALUE;
     private int ruiHuaInt = CENTER_VALUE;
 
@@ -98,7 +97,7 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
      */
     private int lastlingDuInt = lingDuInt;
     private int lastduiBiDuInt = duiBiDuInt;
-    private int lastlengNuanInt = lengNuanInt;
+    private int lastWhiteBalanceInt = whiteBalanceInt;
     private int lastbaoHeDuInt = baoHeDuInt;
     private int lastruiHuaInt = ruiHuaInt;
 
@@ -124,6 +123,7 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         liangDuTV = findViewById(R.id.liangDuTV);
         duiBiDuTV = findViewById(R.id.duiBiDuTV);
         baoHeDuTV = findViewById(R.id.baoHeDuTV);
+        whiteBalanceTV = findViewById(R.id.whiteBalanceTV);
         ruiHuaTV = findViewById(R.id.ruiHuaTV);
         showContainer = findViewById(R.id.showContainer);
         cropImageView = (QuadrilateralCropImageView) findViewById(R.id.cropImageView);
@@ -144,6 +144,7 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         liangDuTV.setOnClickListener(this);
         duiBiDuTV.setOnClickListener(this);
         baoHeDuTV.setOnClickListener(this);
+        whiteBalanceTV.setOnClickListener(this);
         ruiHuaTV.setOnClickListener(this);
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -172,7 +173,8 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
             case DUIBIDU:
                 changeBmpDuiBiDu(progress);
                 break;
-            case LENGNUAN:
+            case WHITEBALANCE:
+                changeBmpWhiteBalance(progress);
                 break;
             case BAOHEDU:
                 changeBmpBaoHeDu(progress);
@@ -184,10 +186,21 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
     }
 
     private void changeBmpLiangDu(int progress) {
-
+        lingDuInt = progress;
+        //渲染
+        if (mFilterAdjuster != null) {
+            mFilterAdjuster.adjust(lingDuInt);
+        }
+        gpuImageView.requestRender();
     }
 
     private void changeBmpBaoHeDu(int progress) {
+        baoHeDuInt = progress;
+        //渲染
+        if (mFilterAdjuster != null) {
+            mFilterAdjuster.adjust(baoHeDuInt);
+        }
+        gpuImageView.requestRender();
 
     }
 
@@ -200,7 +213,22 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         gpuImageView.requestRender();
     }
 
+    private void changeBmpWhiteBalance(int progress) {
+        whiteBalanceInt = progress;
+        //渲染
+        if (mFilterAdjuster != null) {
+            mFilterAdjuster.adjust(whiteBalanceInt);
+        }
+        gpuImageView.requestRender();
+    }
+
     private void changeBmpRuiHua(int progress) {
+        ruiHuaInt = progress;
+        //渲染
+        if (mFilterAdjuster != null) {
+            mFilterAdjuster.adjust(ruiHuaInt);
+        }
+        gpuImageView.requestRender();
     }
 
     private void switchFilterTo(final GPUImageFilter filter) {
@@ -239,6 +267,9 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
             case R.id.duiBiDuTV:
                 toChangeDuiBiDu();
                 break;
+            case R.id.whiteBalanceTV:
+                toChangeWhiteBalance();
+                break;
             case R.id.ruiHuaTV:
                 toChangeRuiDu();
                 break;
@@ -257,30 +288,30 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
             case ROTATE:
                 break;
             case LIANGDU:
-                changeTitleBarState(true, "");
-                changeBottomBarState(true);
+                lingDuInt = lastlingDuInt;
                 break;
             case DUIBIDU:
-                changeTitleBarState(true, "");
-                changeBottomBarState(true);
                 duiBiDuInt = lastduiBiDuInt;
-                //显示原图像，并且释放产生的临时的bitmap
-                if (copyBmp != null && !copyBmp.isRecycled()) {
-                    copyBmp.recycle();
-                    copyBmp = null;
-                }
-                showBitmap();
                 break;
-            case LENGNUAN:
+            case WHITEBALANCE:
+                whiteBalanceInt = lastWhiteBalanceInt;
                 break;
             case BAOHEDU:
-                changeTitleBarState(true, "");
-                changeBottomBarState(true);
+                baoHeDuInt = lastbaoHeDuInt;
                 break;
             case RUIHUA:
-                changeTitleBarState(true, "");
-                changeBottomBarState(true);
+                ruiHuaInt = lastruiHuaInt;
                 break;
+        }
+        if (currentOperation != NOTHING && currentOperation != CROP && currentOperation != ROTATE) {
+            changeTitleBarState(true, "");
+            changeBottomBarState(true);
+            //显示原图像，并且释放产生的临时的bitmap
+            if (copyBmp != null && !copyBmp.isRecycled()) {
+                copyBmp.recycle();
+                copyBmp = null;
+            }
+            showBitmap();
         }
         currentOperation = NOTHING;
     }
@@ -294,25 +325,16 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
                 break;
             case ROTATE:
                 break;
-            case LIANGDU: {
-                changeTitleBarState(true, "");
-                changeBottomBarState(true);
-            }
-            break;
-            case DUIBIDU: {
+            case LIANGDU:
+            case DUIBIDU:
+            case WHITEBALANCE:
+            case BAOHEDU:
+            case RUIHUA: {
                 changeTitleBarState(true, "");
                 changeBottomBarState(true);
                 //得到gpu绘制的bitmap
                 Bitmap lastBmp = currentBmp;
                 try {
-//                    String fileName = System.currentTimeMillis() + ".jpg";
-//                    gpuImageView.saveToPictures("GPUImage2", fileName, new GPUImageView.OnPictureSavedListener() {
-//                        @Override
-//                        public void onPictureSaved(Uri uri) {
-//                            Toast.makeText(ActivityQuadrilateralCrop.this, uri.toString(), Toast.LENGTH_LONG).show();
-//                            Log.d("xiaoyu", uri.toString());
-//                        }
-//                    });
                     currentBmp = gpuImageView.capture();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -326,18 +348,6 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
                     copyBmp.recycle();
                     copyBmp = null;
                 }
-            }
-            break;
-            case LENGNUAN:
-                break;
-            case BAOHEDU: {
-                changeTitleBarState(true, "");
-                changeBottomBarState(true);
-            }
-            break;
-            case RUIHUA: {
-                changeTitleBarState(true, "");
-                changeBottomBarState(true);
             }
             break;
         }
@@ -387,8 +397,14 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         currentOperation = LIANGDU;
         changeTitleBarState(false, "亮度");
         changeBottomBarState(false);
-
         showImageView.setVisibility(View.INVISIBLE);
+
+        //对图像的副本进行操作
+        genCopyBmpAndSetGpuBmp();
+        GPUImageFilter filter = GPUImageFilterTools.createFilterForType(this, GPUImageFilterTools.FilterType.BRIGHTNESS);
+        switchFilterTo(filter);
+        gpuImageView.requestRender();
+        lastlingDuInt = lingDuInt;
 
         seekBar.setProgress(lingDuInt);
     }
@@ -398,8 +414,14 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         currentOperation = BAOHEDU;
         changeTitleBarState(false, "饱和度");
         changeBottomBarState(false);
-
         showImageView.setVisibility(View.INVISIBLE);
+
+        //对图像的副本进行操作
+        genCopyBmpAndSetGpuBmp();
+        GPUImageFilter filter = GPUImageFilterTools.createFilterForType(this, GPUImageFilterTools.FilterType.SATURATION);
+        switchFilterTo(filter);
+        gpuImageView.requestRender();
+        lastbaoHeDuInt = baoHeDuInt;
 
         seekBar.setProgress(baoHeDuInt);
     }
@@ -409,7 +431,6 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         currentOperation = DUIBIDU;
         changeTitleBarState(false, "对比度");
         changeBottomBarState(false);
-
         showImageView.setVisibility(View.INVISIBLE);
 
         //对图像的副本进行操作
@@ -417,9 +438,26 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         GPUImageFilter filter = GPUImageFilterTools.createFilterForType(this, GPUImageFilterTools.FilterType.CONTRAST);
         switchFilterTo(filter);
         gpuImageView.requestRender();
-
         lastduiBiDuInt = duiBiDuInt;
+
         seekBar.setProgress(duiBiDuInt);
+    }
+
+    //改变图片冷暖
+    private void toChangeWhiteBalance() {
+        currentOperation = WHITEBALANCE;
+        changeTitleBarState(false, "白平衡");
+        changeBottomBarState(false);
+        showImageView.setVisibility(View.INVISIBLE);
+
+        //对图像的副本进行操作
+        genCopyBmpAndSetGpuBmp();
+        GPUImageFilter filter = GPUImageFilterTools.createFilterForType(this, GPUImageFilterTools.FilterType.WHITE_BALANCE);
+        switchFilterTo(filter);
+        gpuImageView.requestRender();
+        lastWhiteBalanceInt = whiteBalanceInt;
+
+        seekBar.setProgress(whiteBalanceInt);
     }
 
     //改变图片锐化
@@ -427,13 +465,19 @@ public class ActivityQuadrilateralCrop extends Activity implements View.OnClickL
         currentOperation = RUIHUA;
         changeTitleBarState(false, "锐化");
         changeBottomBarState(false);
-
         showImageView.setVisibility(View.INVISIBLE);
+
+        //对图像的副本进行操作
+        genCopyBmpAndSetGpuBmp();
+        GPUImageFilter filter = GPUImageFilterTools.createFilterForType(this, GPUImageFilterTools.FilterType.SHARPEN);
+        switchFilterTo(filter);
+        gpuImageView.requestRender();
+        lastruiHuaInt = ruiHuaInt;
 
         seekBar.setProgress(ruiHuaInt);
     }
 
-    private void genCopyBmpAndSetGpuBmp(){
+    private void genCopyBmpAndSetGpuBmp() {
         //对图像的副本进行操作
         Bitmap lastBmp = copyBmp;
         copyBmp = Bitmap.createBitmap(imageViewWidth, imageViewHeight, Bitmap.Config.ARGB_8888);
